@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Форма для добавления статьи{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Статьи</h1>
+    {% if articles %}
+        {% for el in articles %}
+        <div class="alert alert-warning">
+            <h3>{{ el.title }}</h3>
+            <p>{{ el.anons }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>У вас нет статей!</p>
+    {% endif %}
+</div>
+{% endblock %}
